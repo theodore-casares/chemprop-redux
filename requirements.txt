@@ -1,0 +1,7 @@
+torch>=2.0
+rdkit
+numpy
+pandas
+scikit-learn
+tqdm
+descriptastorus
