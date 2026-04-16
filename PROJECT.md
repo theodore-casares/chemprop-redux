@@ -100,6 +100,26 @@ Core: directed message passing neural network (D-MPNN) on molecular graphs.
 
 ---
 
+## Data Pipeline
+
+### Training Data (SD1_training_set.csv)
+- 7,686 molecules from A. baumannii growth inhibition screen.
+- Continuous `Mean` inhibition values — need to binarize (1 SD below mean → active).
+- Split 80/10/10 train/val/test for model evaluation metrics (AUC-ROC, etc.).
+
+### Prediction Set (COCONUT)
+- 738K marine natural products — too large to use raw.
+- Filter to drug-like subset: Lipinski violations ≤ 1, reasonable MW, QED > some threshold.
+- Then sample ~5-10K molecules for the virtual screen.
+- This is the "novel chemical space" prediction set, not a traditional test set.
+- Purpose: satisfy assignment requirement for eval on dataset not used in paper.
+
+### Key Distinction
+- **SD1 train/val/test split** → measures model performance (AUC, precision, recall).
+- **COCONUT prediction** → virtual screen on novel chemistry (no ground truth labels). Analyze: prediction distribution, Tanimoto distances to training set, structural novelty of top hits.
+
+---
+
 ## Links
 - Chemprop: https://github.com/chemprop/chemprop
 - Paper code: https://github.com/GaryLiu152/chemprop_abaucin
