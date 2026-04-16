@@ -1,0 +1,22 @@
+# Large data files — use scripts/download_data.sh instead
+data/coconut_csv_lite-*.csv
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+dist/
+build/
+.eggs/
+
+# Environment
+.env
+.venv/
+venv/
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
