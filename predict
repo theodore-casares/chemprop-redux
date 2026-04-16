@@ -1,0 +1,5 @@
+#!/bin/bash
+# One-liner: ./predict --test_path data/coconut_eval.csv --preds_path data/coconut_preds.csv
+set -e
+cd "$(dirname "$0")"
+exec .venv/bin/python scripts/predict.py "$@"

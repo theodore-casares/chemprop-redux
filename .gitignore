@@ -1,5 +1,11 @@
 # Large data files — use scripts/download_data.sh instead
 data/coconut_csv_lite-*.csv
+data/SD2_raw_prediction_set.csv
+data/sd2_eval.csv
+data/sd2_preds.csv
+data/sd2_priority.csv
+data/sd2_preds.hist.png
+data/sd2_max_tanimoto_to_sd1.npy
 
 # Python
 __pycache__/

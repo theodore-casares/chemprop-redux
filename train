@@ -1,0 +1,5 @@
+#!/bin/bash
+# One-liner: ./train [--epochs N --save_dir ... --seed K ...]
+set -e
+cd "$(dirname "$0")"
+exec .venv/bin/python scripts/train.py "$@"

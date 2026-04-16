@@ -3,9 +3,9 @@ import logging
 from typing import Dict, List
 
 from .predict import predict
+from .metrics import get_metric_func
 from chemprop.data import MoleculeDataLoader, StandardScaler
 from chemprop.models import MoleculeModel
-from chemprop.train import get_metric_func
 
 
 def evaluate_predictions(preds: List[List[float]],
