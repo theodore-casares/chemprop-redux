@@ -256,6 +256,13 @@ def main() -> None:
         for m, v in zip(metrics, [t_auc, t_prc, t_acc]):
             w.writerow([m, v])
 
+    # per-mol test preds → enables downstream CV aggregation / re-filtering
+    with open(save_dir / "test_preds.csv", "w") as f:
+        w = csv.writer(f)
+        w.writerow(["smiles", "target", "pred"])
+        for dp, pr in zip(test_data, test_preds_list):
+            w.writerow([dp.smiles[0], dp.targets[0], pr[0]])
+
     # ROC + PR on test set
     test_preds = np.asarray(test_preds_list)[:, 0]
     test_targets = np.asarray([d.targets[0] for d in test_data], dtype=float)
