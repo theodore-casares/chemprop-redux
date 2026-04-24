@@ -27,7 +27,7 @@ class TrainArgs:
     # --- architecture ---
     hidden_size: int = 300
     depth: int = 3
-    dropout: float = 0.0
+    dropout: float = 0.2
     activation: str = "ReLU"
     ffn_num_layers: int = 2
     ffn_hidden_size: int = 300
