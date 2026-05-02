@@ -10,11 +10,11 @@ set -euo pipefail
 ROOT="$(cd "$(dirname "$0")/.." && pwd)"
 cd "$ROOT"
 
-PY="${PY:-.venv/bin/python}"
+PY="${PY:-python}"
 DATA="${DATA:-data/sd1_train.csv}"
-OUT="${OUT:-runs/sd1_ens}"
+OUT="${OUT:-runs/sd1_depth_5_ens}"
 SEEDS="${SEEDS:-0 1 2 3 4 5 6 7 8 9}"
-EPOCHS="${EPOCHS:-30}"
+EPOCHS="${EPOCHS:-10}"
 
 if [[ "$OUT" == "runs/sd1" ]]; then
   echo "refusing to write ensemble into runs/sd1 (would clobber single-model baseline)" >&2
